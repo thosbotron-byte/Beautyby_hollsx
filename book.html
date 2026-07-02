@@ -5,10 +5,29 @@
     <title>Book</title>
 
     <style>
+      /* HOME BUTTON STYLES — moved into <head> */
+      .home-button {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #e0e0e0;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #000;
+        font-family: sans-serif;
+        z-index: 9999; /* ensures it appears above everything */
+      }
+
+      .home-button:hover {
+        background: #d0d0d0;
+      }
+
+      /* CALENDAR STYLES */
       #calendar {
         width: 320px;
         font-family: sans-serif;
-        margin: 20px auto;
+        margin: 80px auto; /* moved down so Home button doesn't overlap */
       }
 
       .calendar-header {
@@ -59,24 +78,6 @@
 
   <body>
     <a href="index.html" class="home-button">Home</a>
-
-<style>
-  .home-button {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: #e0e0e0;
-    padding: 8px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #000;
-    font-family: sans-serif;
-  }
-
-  .home-button:hover {
-    background: #d0d0d0;
-  }
-</style>
 
     <h1>Book</h1>
     <div id="calendar"></div>
@@ -165,16 +166,4 @@
           cell.classList.remove("selected");
           if (
             selectedDate &&
-            Number(cell.textContent) === selectedDate.getDate() &&
-            currentDate.getMonth() === selectedDate.getMonth() &&
-            currentDate.getFullYear() === selectedDate.getFullYear()
-          ) {
-            cell.classList.add("selected");
-          }
-        });
-      }
-
-      renderCalendar();
-    </script>
-  </body>
-</html>
+            Number(cell.textContent) === selectedDate
