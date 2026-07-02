@@ -171,22 +171,4 @@
       }
 
       function highlightSelected() {
-        const cells = document.querySelectorAll(".day");
-        cells.forEach(cell => {
-          cell.classList.remove("selected");
-          if (
-            selectedDate &&
-            Number(cell.textContent) === selectedDate.getDate() &&
-            currentDate.getMonth() === selectedDate.getMonth() &&
-            currentDate.getFullYear() === selectedDate.getFullYear()
-          ) {
-            cell.classList.add("selected");
-          }
-        });
-      }
-
-      renderCalendar();
-    </script>
-
-  </body>
-</html>
+        const cells = document.querySelectorAll
