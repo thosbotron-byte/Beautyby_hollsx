@@ -5,6 +5,28 @@
     <title>Book</title>
 
     <style>
+      .page-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  font-family: sans-serif;
+}
+
+.home-button {
+  background: #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+.home-button:hover {
+  background: #d0d0d0;
+}
+
       /* HOME BUTTON STYLES — moved into <head> */
       .home-button {
         position: absolute;
@@ -77,9 +99,11 @@
   </head>
 
   <body>
-    <a href="index.html" class="home-button">Home</a>
+    <header class="page-header">
+  <a href="index.html" class="home-button">Home</a>
+  <h1>Book</h1>
+</header>
 
-    <h1>Book</h1>
     <div id="calendar"></div>
 
     <script>
